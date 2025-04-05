@@ -29,6 +29,7 @@ jobs:
           npm install
           npm install embla-carousel-react
           npm install react-day-picker
+          npm install recharts
           npm install @radix-ui/react-accordion @radix-ui/react-alert-dialog @radix-ui/react-aspect-ratio @radix-ui/react-avatar
           npm install class-variance-authority @radix-ui/react-slot @radix-ui/react-label @radix-ui/react-toast
 
