@@ -155,13 +155,13 @@ export default function Home() {
                   <div className="absolute inset-0 border-2 border-primary/20 rounded-xl translate-x-4 translate-y-4"></div>
                   <div className="relative z-10 rounded-xl overflow-hidden shadow-lg border border-primary/10">
                     <Image
-                      src="/images/profile.png"
+                      src="./images/profile.png"
                       alt="Ghazanfar Idrees"
                       width={600}
                       height={600}
                       className="w-full h-auto"
                       priority
-                      sizes="(max-width: 768px) 100vw, 600px"
+                      unoptimized
                     />
                   </div>
                 </div>
