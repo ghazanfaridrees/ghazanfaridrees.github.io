@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages1
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -21,11 +21,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-          cache: 'npm'
+          # Remove the cache option since there's no lock file
       
       - name: Install dependencies
         run: |
           npm install
+          # Generate a package-lock.json file for future runs
+          npm i --package-lock-only
       
       - name: Build
         run: |
