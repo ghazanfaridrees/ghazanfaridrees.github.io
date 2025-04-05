@@ -4,12 +4,24 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Remove trailing slash to avoid routing issues
-  trailingSlash: false,
-  // Make sure assets are properly referenced
+  // Fix asset paths for GitHub Pages
   assetPrefix: './',
-  // Disable image optimization which can cause issues in static exports
-  reactStrictMode: true,
+  // Disable trailing slash to avoid routing issues
+  trailingSlash: false,
+  // Ensure webpack optimizations don't break the build
+  webpack: (config) => {
+    // Optimize bundle size
+    config.optimization.minimize = true;
+    
+    // Avoid issues with specific modules
+    config.resolve.fallback = { 
+      fs: false,
+      path: false,
+      os: false,
+    };
+    
+    return config;
+  },
 };
 
 export default nextConfig;
