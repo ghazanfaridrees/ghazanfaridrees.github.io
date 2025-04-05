@@ -27,6 +27,7 @@ jobs:
         run: |
           npm install -g npm@11.2.0
           npm install
+          npm install react-day-picker
           npm install @radix-ui/react-accordion @radix-ui/react-alert-dialog @radix-ui/react-aspect-ratio @radix-ui/react-avatar
           npm install class-variance-authority @radix-ui/react-slot @radix-ui/react-label @radix-ui/react-toast
 
