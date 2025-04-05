@@ -13,7 +13,7 @@ export default function ProjectShowcase() {
       title: "PakWheels Growth Initiative",
       description:
         "Led a comprehensive growth strategy for Pakistan's largest automotive marketplace, focusing on user acquisition and retention.",
-      image: "/images/pakwheels.png",
+      image: "./images/pakwheels.png",
       tags: ["Product Strategy", "Growth", "User Retention"],
       results: [
         "Increased organic traffic by 35%",
@@ -25,14 +25,14 @@ export default function ProjectShowcase() {
       title: "oladoc Healthcare Platform",
       description:
         "Spearheaded product development for Pakistan's biggest healthcare platform, connecting patients with 25,000+ doctors.",
-      image: "/images/oladoc.png",
+      image: "./images/oladoc.png",
       tags: ["Healthcare Tech", "UX Design", "SEO"],
       results: ["Achieved 10x organic growth", "Improved conversion rate by 50%", "Boosted user retention by 30%"],
     },
     {
       title: "Fitcy Health Mental Wellness",
       description: "Developed new features and improved user experience for an online mental health care platform.",
-      image: "/images/fitcy-health.png",
+      image: "./images/fitcy-health.png",
       tags: ["Mental Health", "User Experience", "Product Optimization"],
       results: ["20% increase in user engagement", "15% boost in conversion rate", "Improved session duration by 25%"],
     },
@@ -51,13 +51,15 @@ export default function ProjectShowcase() {
         >
           <div className="relative h-48 w-full overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/80 opacity-0 group-hover:opacity-70 transition-opacity duration-500 z-10"></div>
-            <Image
-              src={project.image || "/placeholder.svg"}
-              alt={project.title}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
-              sizes="(max-width: 768px) 100vw, 33vw"
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src={project.image || "/placeholder.svg"}
+                alt={project.title}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
               <Link href="#contact" className="text-white font-medium flex items-center hover:underline">
                 View Project <ChevronRight className="ml-1 h-4 w-4" />
