@@ -21,87 +21,62 @@ export default function AnimatedBackground() {
     setCanvasDimensions()
     window.addEventListener("resize", setCanvasDimensions)
 
-    // Particle class
-    class Particle {
+    // Simplified particle system for better compatibility
+    const particles: Array<{
       x: number
       y: number
       size: number
       speedX: number
       speedY: number
       color: string
+    }> = []
 
-      constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
-        this.size = Math.random() * 3 + 1
-        this.speedX = Math.random() * 0.5 - 0.25
-        this.speedY = Math.random() * 0.5 - 0.25
-        this.color = `rgba(${Math.floor(Math.random() * 100) + 155}, ${Math.floor(Math.random() * 100) + 155}, ${Math.floor(Math.random() * 255)}, ${Math.random() * 0.2 + 0.1})`
-      }
-
-      update() {
-        this.x += this.speedX
-        this.y += this.speedY
-
-        if (this.x > canvas.width) this.x = 0
-        else if (this.x < 0) this.x = canvas.width
-
-        if (this.y > canvas.height) this.y = 0
-        else if (this.y < 0) this.y = canvas.height
-      }
-
-      draw() {
-        if (!ctx) return
-        ctx.fillStyle = this.color
-        ctx.beginPath()
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
-        ctx.fill()
-      }
-    }
-
-    // Create particles
-    const particlesArray: Particle[] = []
-    const numberOfParticles = Math.min(100, Math.floor((canvas.width * canvas.height) / 20000))
+    // Create fewer particles for better performance
+    const numberOfParticles = Math.min(50, Math.floor((canvas.width * canvas.height) / 30000))
 
     for (let i = 0; i < numberOfParticles; i++) {
-      particlesArray.push(new Particle())
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2 + 1,
+        speedX: Math.random() * 0.3 - 0.15,
+        speedY: Math.random() * 0.3 - 0.15,
+        color: `rgba(${Math.floor(Math.random() * 100) + 155}, ${Math.floor(Math.random() * 100) + 155}, ${Math.floor(Math.random() * 255)}, ${Math.random() * 0.2 + 0.1})`,
+      })
     }
 
     // Animation loop
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      // Draw connections between particles
-      for (let a = 0; a < particlesArray.length; a++) {
-        for (let b = a; b < particlesArray.length; b++) {
-          const dx = particlesArray[a].x - particlesArray[b].x
-          const dy = particlesArray[a].y - particlesArray[b].y
-          const distance = Math.sqrt(dx * dx + dy * dy)
-
-          if (distance < 150) {
-            ctx.beginPath()
-            ctx.strokeStyle = `rgba(150, 150, 255, ${0.1 * (1 - distance / 150)})`
-            ctx.lineWidth = 0.5
-            ctx.moveTo(particlesArray[a].x, particlesArray[a].y)
-            ctx.lineTo(particlesArray[b].x, particlesArray[b].y)
-            ctx.stroke()
-          }
-        }
-      }
-
       // Update and draw particles
-      for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update()
-        particlesArray[i].draw()
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i]
+
+        p.x += p.speedX
+        p.y += p.speedY
+
+        if (p.x > canvas.width) p.x = 0
+        else if (p.x < 0) p.x = canvas.width
+
+        if (p.y > canvas.height) p.y = 0
+        else if (p.y < 0) p.y = canvas.height
+
+        ctx.fillStyle = p.color
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
+        ctx.fill()
       }
 
       requestAnimationFrame(animate)
     }
 
-    animate()
+    // Start animation
+    const animationId = requestAnimationFrame(animate)
 
     return () => {
       window.removeEventListener("resize", setCanvasDimensions)
+      cancelAnimationFrame(animationId)
     }
   }, [])
 
