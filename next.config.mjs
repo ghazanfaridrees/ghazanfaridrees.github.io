@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  module.exports = {
-  output: 'export', // Use this for static export
+  export default {
+  output: 'export',
 },
   images: {
     unoptimized: true,
