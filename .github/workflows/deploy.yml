@@ -25,19 +25,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-          # Remove the cache option that's causing issues
-      
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          static_site_generator: next
       
       - name: Install dependencies
-        # Use npm install instead of npm ci since we don't have a lock file yet
         run: npm install
       
-      - name: Build with Next.js
+      - name: Build
         run: npm run build
+        env:
+          # Add this to help with debugging
+          NODE_ENV: production
+          CI: false
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
