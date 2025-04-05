@@ -5,7 +5,7 @@ const nextConfig = {
     unoptimized: true,
   },
   // Fix asset paths for GitHub Pages
-  assetPrefix: './',
+  assetPrefix: '/',
   // Disable trailing slash to avoid routing issues
   trailingSlash: false,
   // Ensure webpack optimizations don't break the build
