@@ -29,7 +29,7 @@ jobs:
           npm install
           npm install cmdk embla-carousel-react recharts react-day-picker vaul
           npm install @radix-ui/react-accordion @radix-ui/react-alert-dialog @radix-ui/react-aspect-ratio @radix-ui/react-avatar @radix-ui/react-checkbox
-          npm install class-variance-authority @radix-ui/react-slot @radix-ui/react-label @radix-ui/react-toast @radix-ui/react-context-menu
+          npm install class-variance-authority @radix-ui/react-slot @radix-ui/react-label @radix-ui/react-toast @radix-ui/react-context-menu @radix-ui/react-dropdown-menu
 
       - name: Build and Export
         run: |
