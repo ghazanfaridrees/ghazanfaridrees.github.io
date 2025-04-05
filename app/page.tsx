@@ -299,7 +299,7 @@ export default function Home() {
 
         {/* Skills Section */}
         <section id="skills" className="py-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat opacity-5"></div>
+          <div className="absolute inset-0 bg-[url('./grid-pattern.svg')] bg-repeat opacity-5"></div>
           <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-1/4 h-1/4 bg-secondary/5 rounded-full blur-3xl"></div>
 
@@ -347,7 +347,7 @@ export default function Home() {
 
         {/* Testimonials Section */}
         <section id="testimonials" className="py-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/dots-pattern.svg')] bg-repeat opacity-5"></div>
+          <div className="absolute inset-0 bg-[url('./dots-pattern.svg')] bg-repeat opacity-5"></div>
           <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-1/4 h-1/4 bg-secondary/5 rounded-full blur-3xl"></div>
 
@@ -434,7 +434,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t py-6 md:py-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat opacity-5"></div>
+        <div className="absolute inset-0 bg-[url('./grid-pattern.svg')] bg-repeat opacity-5"></div>
 
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left relative z-10">
           <div className="flex items-center">
