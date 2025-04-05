@@ -27,10 +27,7 @@ jobs:
         run: |
           npm install -g npm@11.2.0
           npm install
-          npm install embla-carousel-react
-          npm install react-day-picker
-          npm install recharts
-          npm install cmdk embla-carousel-react recharts react-day-picker
+          npm install cmdk embla-carousel-react recharts react-day-picker vaul
           npm install @radix-ui/react-accordion @radix-ui/react-alert-dialog @radix-ui/react-aspect-ratio @radix-ui/react-avatar @radix-ui/react-checkbox
           npm install class-variance-authority @radix-ui/react-slot @radix-ui/react-label @radix-ui/react-toast @radix-ui/react-context-menu
 
