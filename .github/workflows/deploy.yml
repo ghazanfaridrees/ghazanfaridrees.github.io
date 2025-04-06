@@ -22,11 +22,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20.17.0"
+      
+      - name: Clean npm cache
+        run: npm cache clean --force
 
       - name: Install dependencies
         run: |
           npm install -g npm@11.2.0
-          npm install --force
+          npm install --legacy-peer-deps
           npm install react-hook-form cmdk embla-carousel-react recharts react-day-picker vaul
           npm install clsx @radix-ui/react-accordion @radix-ui/react-alert-dialog @radix-ui/react-aspect-ratio @radix-ui/react-avatar @radix-ui/react-checkbox @radix-ui/react-collapsible @radix-ui/react-dialog @radix-ui/react-context-menu vaul @radix-ui/react-dropdown-menu react-hook-form @radix-ui/react-hover-card input-otp @radix-ui/react-menubar @radix-ui/react-navigation-menu @radix-ui/react-popover @radix-ui/react-progress @radix-ui/react-radio-group react-resizable-panels @radix-ui/react-scroll-area @radix-ui/react-select @radix-ui/react-separator @radix-ui/react-slider sonner @radix-ui/react-switch @radix-ui/react-tabs @radix-ui/react-toast @radix-ui/react-toggle-group @radix-ui/react-toggle @radix-ui/react-tooltip
           npm install @radix-ui/react-accordion @radix-ui/react-alert-dialog @radix-ui/react-aspect-ratio @radix-ui/react-avatar @radix-ui/react-checkbox
