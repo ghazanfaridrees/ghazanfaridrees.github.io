@@ -32,7 +32,7 @@
   },
   "homepage": "https://ghazanfaridrees.com",
   "scripts": {
-  "build": "next build && next export",
+  "build": "next build",
   "deploy": "gh-pages -d out"
 }
 }
