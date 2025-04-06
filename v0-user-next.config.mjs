@@ -4,9 +4,24 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '',
-  trailingSlash: true,
+  // Fix asset paths for GitHub Pages
   assetPrefix: './',
+  // Disable trailing slash to avoid routing issues
+  trailingSlash: false,
+  // Ensure webpack optimizations don't break the build
+  webpack: (config) => {
+    // Optimize bundle size
+    config.optimization.minimize = true;
+    
+    // Avoid issues with specific modules
+    config.resolve.fallback = { 
+      fs: false,
+      path: false,
+      os: false,
+    };
+    
+    return config;
+  },
 };
 
 export default nextConfig;

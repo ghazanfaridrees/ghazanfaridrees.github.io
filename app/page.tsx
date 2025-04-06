@@ -5,25 +5,27 @@ import ContactForm from "@/components/contact-form"
 import ExperienceTimeline from "@/components/experience-timeline"
 import SkillsSection from "@/components/skills-section"
 import TestimonialSlider from "@/components/testimonial-slider"
-import ProjectShowcase from "@/components/project-showcase"
 import { Button } from "@/components/ui/button"
 import AnimatedCounter from "@/components/animated-counter"
 import AnimatedBackground from "@/components/animated-background"
 import ScrollReveal from "@/components/scroll-reveal"
 import Logo from "@/components/logo"
+import CaseStudies from "@/components/case-studies"
+import ServicesSection from "@/components/services-section"
+import IndustryFocus from "@/components/industry-focus"
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Header/Navigation */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
           <Logo />
           <nav className="hidden md:flex gap-6">
-            {["About", "Experience", "Skills", "Projects", "Testimonials", "Contact"].map((item) => (
+            {["About", "Services", "Case Studies", "Experience", "Contact"].map((item) => (
               <Link
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`#${item.toLowerCase().replace(" ", "-")}`}
                 className="text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary hover:after:w-full after:transition-all after:duration-300"
               >
                 {item}
@@ -63,7 +65,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative overflow-hidden py-20 md:py-32 lg:py-40">
           <AnimatedBackground />
-          <div className="container flex flex-col items-center text-center relative z-10">
+          <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center relative z-10">
             <div className="space-y-4 mb-8">
               <div className="inline-block px-4 py-1.5 mb-4 rounded-full text-sm font-medium bg-primary/10 text-primary animate-fade-in">
                 Product-Led Growth Strategist
@@ -72,13 +74,13 @@ export default function Home() {
                 Ghazanfar Idrees
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground animate-fade-in-up">
-                Director of Product Studio at Devsinc
+                I Help Companies Build Products That Retain & Grow Users
               </p>
             </div>
 
             <p className="max-w-[700px] text-muted-foreground md:text-xl mb-8 animate-fade-in-up animation-delay-300">
-              Helping companies build products that retain & grow users. I focus on growth, retention, and impact with
-              12+ years of experience.
+              Specialized in conversion optimization, user retention, and growth strategies that deliver measurable
+              business outcomes with 12+ years of experience.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md mx-auto animate-fade-in-up animation-delay-500">
@@ -87,8 +89,8 @@ export default function Home() {
                 size="lg"
                 className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
               >
-                <Link href="#contact">
-                  Work with me <ArrowRight className="ml-2 h-4 w-4" />
+                <Link href="#services">
+                  See How I Can Help <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button
@@ -97,8 +99,8 @@ export default function Home() {
                 size="lg"
                 className="w-full border-primary/20 hover:border-primary/50 transition-colors"
               >
-                <Link href="#experience">
-                  View Experience <ChevronDown className="ml-2 h-4 w-4" />
+                <Link href="#contact">
+                  Get in Touch <ChevronDown className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
@@ -120,7 +122,7 @@ export default function Home() {
           </div>
 
           {/* Stats Counter */}
-          <div className="container mt-20">
+          <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               <div className="bg-card/50 backdrop-blur-sm rounded-xl p-6 text-center border border-primary/10 hover:border-primary/30 transition-colors">
                 <AnimatedCounter value={12} suffix="+" className="text-3xl md:text-4xl font-bold text-primary" />
@@ -131,14 +133,48 @@ export default function Home() {
                 <p className="text-muted-foreground">Projects Completed</p>
               </div>
               <div className="bg-card/50 backdrop-blur-sm rounded-xl p-6 text-center border border-primary/10 hover:border-primary/30 transition-colors">
-                <AnimatedCounter value={10} suffix="x" className="text-3xl md:text-4xl font-bold text-primary" />
-                <p className="text-muted-foreground">Growth Achieved</p>
+                <AnimatedCounter value={30} suffix="%" className="text-3xl md:text-4xl font-bold text-primary" />
+                <p className="text-muted-foreground">Avg. Retention Increase</p>
               </div>
               <div className="bg-card/50 backdrop-blur-sm rounded-xl p-6 text-center border border-primary/10 hover:border-primary/30 transition-colors">
-                <AnimatedCounter value={30} suffix="%" className="text-3xl md:text-4xl font-bold text-primary" />
-                <p className="text-muted-foreground">Retention Improved</p>
+                <AnimatedCounter value={40} suffix="%" className="text-3xl md:text-4xl font-bold text-primary" />
+                <p className="text-muted-foreground">Avg. Conversion Boost</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Services Section - Moved up for better lead generation */}
+        <section id="services" className="py-20 relative">
+          <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-secondary/5 rounded-full blur-3xl"></div>
+
+          <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <ScrollReveal>
+              <div className="text-center mb-16">
+                <div className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary mb-4">
+                  My Services
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary mb-4">
+                  How I Can Help Your Business Grow
+                </h2>
+                <p className="text-muted-foreground max-w-3xl mx-auto">
+                  Specialized services designed to deliver measurable improvements to your product metrics and business
+                  outcomes.
+                </p>
+              </div>
+              <ServicesSection />
+              <div className="flex justify-center mt-12">
+                <Button
+                  asChild
+                  className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
+                >
+                  <Link href="#contact">
+                    Discuss Your Project Needs <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -148,7 +184,7 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-secondary/5 rounded-full blur-3xl"></div>
 
-          <div className="container relative z-10">
+          <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <ScrollReveal>
               <div className="flex flex-col md:flex-row gap-12 items-center">
                 <div className="md:w-1/2 relative">
@@ -273,12 +309,71 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Industry Focus Section */}
+        <section id="industry-focus" className="py-20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat opacity-5"></div>
+          <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-1/4 h-1/4 bg-secondary/5 rounded-full blur-3xl"></div>
+
+          <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <ScrollReveal>
+              <div className="text-center mb-16">
+                <div className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary mb-4">
+                  Industry Focus
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary mb-4">
+                  Specialized Experience
+                </h2>
+                <p className="text-muted-foreground max-w-3xl mx-auto">
+                  I bring deep expertise to these industries, with proven strategies tailored to their unique
+                  challenges.
+                </p>
+              </div>
+              <IndustryFocus />
+              <div className="flex justify-center mt-12">
+                <Button
+                  asChild
+                  className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
+                >
+                  <Link href="#contact">
+                    Work With an Industry Expert <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Case Studies Section */}
+        <section id="case-studies" className="py-20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/dots-pattern.svg')] bg-repeat opacity-5"></div>
+          <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-1/4 h-1/4 bg-secondary/5 rounded-full blur-3xl"></div>
+
+          <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <ScrollReveal>
+              <div className="text-center mb-16">
+                <div className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary mb-4">
+                  Case Studies
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary mb-4">
+                  Real Results for Real Clients
+                </h2>
+                <p className="text-muted-foreground max-w-3xl mx-auto">
+                  Detailed case studies showcasing how my approach delivers measurable business outcomes.
+                </p>
+              </div>
+              <CaseStudies />
+            </ScrollReveal>
+          </div>
+        </section>
+
         {/* Experience Section */}
         <section id="experience" className="py-20 relative">
           <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-secondary/5 rounded-full blur-3xl"></div>
 
-          <div className="container relative z-10">
+          <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <ScrollReveal>
               <div className="text-center mb-16">
                 <div className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary mb-4">
@@ -299,11 +394,11 @@ export default function Home() {
 
         {/* Skills Section */}
         <section id="skills" className="py-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('./grid-pattern.svg')] bg-repeat opacity-5"></div>
+          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat opacity-5"></div>
           <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-1/4 h-1/4 bg-secondary/5 rounded-full blur-3xl"></div>
 
-          <div className="container relative z-10">
+          <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <ScrollReveal>
               <div className="text-center mb-16">
                 <div className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary mb-4">
@@ -322,36 +417,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects Section */}
-        <section id="projects" className="py-20 relative">
-          <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-secondary/5 rounded-full blur-3xl"></div>
-
-          <div className="container relative z-10">
-            <ScrollReveal>
-              <div className="text-center mb-16">
-                <div className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary mb-4">
-                  My Work
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary mb-4">
-                  Featured Projects
-                </h2>
-                <p className="text-muted-foreground max-w-3xl mx-auto">
-                  A selection of projects that showcase my approach to product development and growth.
-                </p>
-              </div>
-              <ProjectShowcase />
-            </ScrollReveal>
-          </div>
-        </section>
-
         {/* Testimonials Section */}
         <section id="testimonials" className="py-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('./dots-pattern.svg')] bg-repeat opacity-5"></div>
+          <div className="absolute inset-0 bg-[url('/dots-pattern.svg')] bg-repeat opacity-5"></div>
           <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-1/4 h-1/4 bg-secondary/5 rounded-full blur-3xl"></div>
 
-          <div className="container relative z-10">
+          <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <ScrollReveal>
               <div className="text-center mb-16">
                 <div className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary mb-4">
@@ -365,16 +437,26 @@ export default function Home() {
                 </p>
               </div>
               <TestimonialSlider />
+              <div className="flex justify-center mt-12">
+                <Button
+                  asChild
+                  className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
+                >
+                  <Link href="#contact">
+                    Ready to Get Similar Results? <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </ScrollReveal>
           </div>
         </section>
 
-        {/* Contact Section */}
+        {/* Contact Section - Enhanced for lead generation */}
         <section id="contact" className="py-20 relative">
           <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-secondary/5 rounded-full blur-3xl"></div>
 
-          <div className="container relative z-10">
+          <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <ScrollReveal>
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
@@ -382,13 +464,13 @@ export default function Home() {
                     Get In Touch
                   </div>
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-                    Let's Work Together
+                    Let's Grow Your Business Together
                   </h2>
                   <p className="text-muted-foreground">
-                    Looking for a product strategy expert to help grow your business? I'm available for consulting,
-                    advisory roles, and project-based work.
+                    Ready to improve your product metrics and drive business growth? I'm available for consulting,
+                    advisory roles, and project-based work. Let's discuss how I can help you achieve your goals.
                   </p>
-                  <div className="space-y-4">
+                  <div className="space-y-4 mt-8">
                     <div className="flex items-center gap-3">
                       <div className="rounded-full bg-gradient-to-r from-primary to-secondary p-2">
                         <Mail className="h-5 w-5 text-white" />
@@ -422,8 +504,90 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
+                  <div className="bg-primary/5 p-6 rounded-lg mt-8">
+                    <h3 className="font-semibold text-lg mb-2">Why Work With Me?</h3>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2">
+                        <div className="rounded-full bg-primary/10 p-1 mt-0.5 shrink-0">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="10"
+                            height="10"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="text-primary"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </div>
+                        <span className="text-sm">Data-driven approach with measurable results</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="rounded-full bg-primary/10 p-1 mt-0.5 shrink-0">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="10"
+                            height="10"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="text-primary"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </div>
+                        <span className="text-sm">12+ years of experience across multiple industries</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="rounded-full bg-primary/10 p-1 mt-0.5 shrink-0">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="10"
+                            height="10"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="text-primary"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </div>
+                        <span className="text-sm">Proven track record of increasing retention and conversion</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="rounded-full bg-primary/10 p-1 mt-0.5 shrink-0">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="10"
+                            height="10"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="text-primary"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </div>
+                        <span className="text-sm">Tailored strategies specific to your business needs</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <div className="bg-card/50 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-primary/10 hover:border-primary/30 transition-all duration-500 hover:shadow-primary/5">
+                  <h3 className="text-xl font-semibold mb-4 text-center">Request a Free Consultation</h3>
                   <ContactForm />
                 </div>
               </div>
@@ -434,9 +598,9 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t py-6 md:py-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('./grid-pattern.svg')] bg-repeat opacity-5"></div>
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat opacity-5"></div>
 
-        <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left relative z-10">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left relative z-10">
           <div className="flex items-center">
             <Logo className="text-base" />
             <span className="ml-2 text-sm text-muted-foreground">

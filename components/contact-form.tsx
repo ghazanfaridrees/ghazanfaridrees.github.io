@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "@/hooks/use-toast"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -21,7 +22,7 @@ export default function ContactForm() {
       setIsSubmitting(false)
       toast({
         title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        description: "Thank you for reaching out. I'll get back to you within 24 hours.",
       })
 
       // Reset form
@@ -31,7 +32,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div className="space-y-2">
         <Label htmlFor="name">Name</Label>
         <Input
@@ -52,19 +53,35 @@ export default function ContactForm() {
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="subject">Subject</Label>
+        <Label htmlFor="company">Company</Label>
         <Input
-          id="subject"
-          placeholder="What is this regarding?"
-          required
+          id="company"
+          placeholder="Your company name"
           className="border-primary/20 focus:border-primary/50 transition-colors"
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="message">Message</Label>
+        <Label htmlFor="service">I'm interested in</Label>
+        <Select>
+          <SelectTrigger className="border-primary/20 focus:border-primary/50 transition-colors">
+            <SelectValue placeholder="Select a service" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="conversion">Conversion Rate Optimization</SelectItem>
+            <SelectItem value="retention">User Retention Strategy</SelectItem>
+            <SelectItem value="growth">Product Growth Audit</SelectItem>
+            <SelectItem value="seo">SEO & Organic Growth</SelectItem>
+            <SelectItem value="analytics">Product Analytics Implementation</SelectItem>
+            <SelectItem value="strategy">Product Strategy Consulting</SelectItem>
+            <SelectItem value="other">Other</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+      <div className="space-y-2">
+        <Label htmlFor="message">Tell me about your project</Label>
         <Textarea
           id="message"
-          placeholder="Tell me about your project or inquiry..."
+          placeholder="What challenges are you facing? What are your goals?"
           className="min-h-[120px] border-primary/20 focus:border-primary/50 transition-colors"
           required
         />
@@ -92,9 +109,12 @@ export default function ContactForm() {
             Sending...
           </div>
         ) : (
-          "Send Message"
+          "Request Free Consultation"
         )}
       </Button>
+      <p className="text-xs text-center text-muted-foreground">
+        I'll respond within 24 hours to schedule a free 30-minute consultation.
+      </p>
     </form>
   )
 }
