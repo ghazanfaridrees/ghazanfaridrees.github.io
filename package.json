@@ -30,6 +30,10 @@
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   },
-  "homepage": "https://ghazanfaridrees.com"
+  "homepage": "https://ghazanfaridrees.com",
+  "scripts": {
+  "build": "next build && next export",
+  "deploy": "gh-pages -d out"
+}
 }
 
