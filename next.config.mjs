@@ -2,14 +2,14 @@
 const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
   output: 'export',
+  trailingSlash: true,
+   assetPrefix: '',
   images: {
     unoptimized: true,
   },
   // Fix asset paths for GitHub Pages
-  //assetPrefix: isProd ? 'https://ghazanfaridress.com/' : '',
-  // Disable trailing slash to avoid routing issues
-  trailingSlash: true,
-  assetPrefix: '',
+  //assetPrefix: isProd ? 'https://ghazanfaridrees.com/' : '',
+ 
   // Ensure webpack optimizations don't break the build
   webpack: (config) => {
     // Optimize bundle size
