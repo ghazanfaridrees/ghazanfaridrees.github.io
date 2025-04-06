@@ -9,6 +9,7 @@ const nextConfig = {
   //assetPrefix: isProd ? 'https://ghazanfaridress.com/' : '',
   // Disable trailing slash to avoid routing issues
   trailingSlash: true,
+  assetPrefix: '',
   // Ensure webpack optimizations don't break the build
   webpack: (config) => {
     // Optimize bundle size
