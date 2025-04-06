@@ -6,7 +6,7 @@ const nextConfig = {
     unoptimized: true,
   },
   // Fix asset paths for GitHub Pages
-  assetPrefix: isProd ? 'https://ghazanfaridress.com/' : '',
+  //assetPrefix: isProd ? 'https://ghazanfaridress.com/' : '',
   // Disable trailing slash to avoid routing issues
   trailingSlash: true,
   // Ensure webpack optimizations don't break the build
