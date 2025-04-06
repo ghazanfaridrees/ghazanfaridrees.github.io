@@ -1,7 +1,6 @@
 import { ArrowRight, ChevronDown, ExternalLink, Mail, MapPin, Phone } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import ContactForm from "@/components/contact-form"
 import ExperienceTimeline from "@/components/experience-timeline"
 import SkillsSection from "@/components/skills-section"
 import TestimonialSlider from "@/components/testimonial-slider"
@@ -13,6 +12,7 @@ import Logo from "@/components/logo"
 import CaseStudies from "@/components/case-studies"
 import ServicesSection from "@/components/services-section"
 import IndustryFocus from "@/components/industry-focus"
+import CalendlyIframe from "@/components/calendly-iframe"
 
 export default function Home() {
   return (
@@ -586,9 +586,15 @@ export default function Home() {
                     </ul>
                   </div>
                 </div>
-                <div className="bg-card/50 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-primary/10 hover:border-primary/30 transition-all duration-500 hover:shadow-primary/5">
-                  <h3 className="text-xl font-semibold mb-4 text-center">Request a Free Consultation</h3>
-                  <ContactForm />
+                <div className="bg-card/50 backdrop-blur-sm rounded-xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all duration-500 hover:shadow-primary/5">
+
+                  <h3 className="text-xl font-semibold py-4 text-center bg-gradient-to-r from-primary/5 to-secondary/5">
+
+                    Schedule a Free Consultation
+
+                  </h3>
+
+                  <CalendlyIframe />
                 </div>
               </div>
             </ScrollReveal>
