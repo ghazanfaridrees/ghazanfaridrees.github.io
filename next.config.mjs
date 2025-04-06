@@ -2,11 +2,13 @@
 const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
   output: 'export',
-  trailingSlash: true,
-   assetPrefix: '',
+  basePath: '',
+  assetPrefix: '',
   images: {
     unoptimized: true,
   },
+  trailingSlash: true,
+  reactStrictMode: true,
   // Fix asset paths for GitHub Pages
   //assetPrefix: isProd ? 'https://ghazanfaridrees.com/' : '',
  
