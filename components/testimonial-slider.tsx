@@ -10,26 +10,26 @@ export default function TestimonialSlider() {
     {
       quote:
         "Ghazanfar's strategic approach to product development transformed our user retention. His focus on data-driven decisions helped us increase our conversion rate by 35% in just three months.",
-      author: "Sarah Johnson",
-      title: "CEO, HealthTech Innovations",
+      author: "Abid Z.",
+      title: "CEO, Healthcare Startup in Pakistan",
     },
     {
       quote:
         "Working with Ghazanfar was a game-changer for our startup. His deep understanding of product-led growth strategies helped us scale our user base from 5,000 to 50,000 in under a year.",
-      author: "Ahmed Khan",
-      title: "Founder, TechStart",
+      author: "Tariq M.",
+      title: "Founder, Tech Startup in UAE",
     },
     {
       quote:
         "Ghazanfar has a unique ability to balance user needs with business objectives. His product optimizations increased our revenue by 40% while simultaneously improving our user satisfaction scores.",
-      author: "Fatima Zaidi",
-      title: "Product Director, E-commerce Solutions",
+      author: "Nadia R.",
+      title: "Product Director, E-commerce Platform in Saudi Arabia",
     },
     {
       quote:
         "I've worked with many product leaders, but Ghazanfar stands out for his analytical approach and growth mindset. He doesn't just build features; he builds sustainable growth engines.",
-      author: "Michael Chen",
-      title: "CTO, Global Tech Solutions",
+      author: "Rahul S.",
+      title: "CTO, SaaS Company in India",
     },
   ]
 
