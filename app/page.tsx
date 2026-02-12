@@ -105,14 +105,14 @@ export default function Home() {
               </Button>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-12 animate-fade-in-up animation-delay-700">
-              <div className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <MapPin className="h-4 w-4" />
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 mt-12 animate-fade-in-up animation-delay-700">
+              <div className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base">
+                <MapPin className="h-4 w-4 shrink-0" />
                 <span>Lahore, Punjab, Pakistan</span>
               </div>
-              <a href="mailto:ghazanfar.idrees@gmail.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <Mail className="h-4 w-4" />
-                <span>ghazanfar.idrees@gmail.com</span>
+              <a href="mailto:ghazanfar.idrees@gmail.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base">
+                <Mail className="h-4 w-4 shrink-0" />
+                <span className="break-all sm:break-normal">ghazanfar.idrees@gmail.com</span>
               </a>
             </div>
           </div>
@@ -183,8 +183,8 @@ export default function Home() {
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <ScrollReveal>
               <div className="flex flex-col md:flex-row gap-12 items-center">
-                <div className="md:w-1/2 relative">
-                  <div className="absolute inset-0 border-2 border-primary/20 rounded-xl translate-x-4 translate-y-4"></div>
+                <div className="md:w-1/2 relative pr-4 pb-4">
+                  <div className="hidden sm:block absolute inset-0 border-2 border-primary/20 rounded-xl translate-x-4 translate-y-4"></div>
                   <div className="relative z-10 rounded-xl overflow-hidden shadow-lg border border-primary/10">
                     <Image
                       src="./images/profile.png"
