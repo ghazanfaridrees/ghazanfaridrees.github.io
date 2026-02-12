@@ -4,9 +4,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 export default function ExperienceTimeline() {
   const experiences = [
     {
+      title: "Chief Product Officer",
+      company: "Edge",
+      period: "June 2025 - Present",
+      location: "Lahore",
+      description: "Driving product vision, strategy, and execution across the organization to deliver user-centric products that fuel business growth.",
+      achievements: [],
+    },
+    {
       title: "Director of Product Studio",
       company: "Devsinc",
-      period: "March 2024 - Present",
+      period: "March 2024 - May 2025",
       location: "Lahore",
       description: "Leading the product studio to help companies build products that retain and grow users.",
       achievements: [],
