@@ -77,7 +77,7 @@ export default function TestimonialSlider() {
             </div>
           </div>
 
-          <div className="relative h-[200px] md:h-[150px]">
+          <div className="relative h-[280px] sm:h-[220px] md:h-[180px]">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
@@ -89,7 +89,7 @@ export default function TestimonialSlider() {
                       : "opacity-0 translate-x-full"
                 }`}
               >
-                <blockquote className="text-xl text-center italic mb-6">"{testimonial.quote}"</blockquote>
+                <blockquote className="text-base sm:text-lg md:text-xl text-center italic mb-6">"{testimonial.quote}"</blockquote>
                 <div className="text-center">
                   <p className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
                     {testimonial.author}

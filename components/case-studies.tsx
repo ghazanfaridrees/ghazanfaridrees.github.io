@@ -261,11 +261,11 @@ export default function CaseStudies() {
                     Read Case Study <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto mx-4">
                   {selectedCaseStudy !== null && (
                     <>
                       <DialogHeader>
-                        <div className="flex items-center gap-2 mb-2">
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
                           <Badge className="bg-primary/10 text-primary border-none">
                             <div className="flex items-center gap-1">
                               {caseStudies[selectedCaseStudy].icon}
@@ -278,12 +278,12 @@ export default function CaseStudies() {
                             </Badge>
                           ))}
                         </div>
-                        <DialogTitle className="text-2xl font-bold tracking-tight">
+                        <DialogTitle className="text-xl sm:text-2xl font-bold tracking-tight">
                           {caseStudies[selectedCaseStudy].title}
                         </DialogTitle>
                         <DialogDescription>{caseStudies[selectedCaseStudy].description}</DialogDescription>
                       </DialogHeader>
-                      <div className="relative h-64 w-full overflow-hidden rounded-lg my-6">
+                      <div className="relative h-40 sm:h-64 w-full overflow-hidden rounded-lg my-4 sm:my-6">
                         <div className="relative w-full h-full bg-gradient-to-r from-primary/10 to-secondary/10">
                           <Image
                             src={caseStudies[selectedCaseStudy].image || "/placeholder.svg?height=600&width=1200"}

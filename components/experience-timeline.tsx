@@ -4,9 +4,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 export default function ExperienceTimeline() {
   const experiences = [
     {
+      title: "Chief Product Officer",
+      company: "Edge",
+      period: "June 2025 - Present",
+      location: "Lahore",
+      description: "Driving product vision, strategy, and execution across the organization to deliver user-centric products that fuel business growth.",
+      achievements: [],
+    },
+    {
       title: "Director of Product Studio",
       company: "Devsinc",
-      period: "March 2024 - Present",
+      period: "March 2024 - May 2025",
       location: "Lahore",
       description: "Leading the product studio to help companies build products that retain and grow users.",
       achievements: [],
@@ -74,9 +82,9 @@ export default function ExperienceTimeline() {
       {experiences.map((exp, index) => (
         <Card
           key={index}
-          className="border-l-4 border-l-primary hover:shadow-lg transition-all duration-300 hover:border-l-secondary group overflow-hidden"
+          className="relative border-l-4 border-l-primary hover:shadow-lg transition-all duration-300 hover:border-l-secondary group overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
           <CardHeader className="relative z-10">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
               <div>

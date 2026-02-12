@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronDown, ExternalLink, Mail, MapPin, Phone } from "lucide-react"
+import { ArrowRight, ChevronDown, ExternalLink, Mail, MapPin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import ExperienceTimeline from "@/components/experience-timeline"
@@ -13,6 +13,7 @@ import CaseStudies from "@/components/case-studies"
 import ServicesSection from "@/components/services-section"
 import IndustryFocus from "@/components/industry-focus"
 import CalendlyIframe from "@/components/calendly-iframe"
+import MobileNav from "@/components/mobile-nav"
 
 export default function Home() {
   return (
@@ -40,24 +41,7 @@ export default function Home() {
               Let's Talk <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-6 w-6"
-            >
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
-          </Button>
+          <MobileNav />
         </div>
       </header>
 
@@ -105,19 +89,15 @@ export default function Home() {
               </Button>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-12 animate-fade-in-up animation-delay-700">
-              <div className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <MapPin className="h-4 w-4" />
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 mt-12 animate-fade-in-up animation-delay-700">
+              <div className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base">
+                <MapPin className="h-4 w-4 shrink-0" />
                 <span>Lahore, Punjab, Pakistan</span>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <Mail className="h-4 w-4" />
-                <span>ghazanfar.idrees@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                <Phone className="h-4 w-4" />
-                <span>03336699003</span>
-              </div>
+              <a href="mailto:ghazanfar.idrees@gmail.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base">
+                <Mail className="h-4 w-4 shrink-0" />
+                <span className="break-all sm:break-normal">ghazanfar.idrees@gmail.com</span>
+              </a>
             </div>
           </div>
 
@@ -187,8 +167,8 @@ export default function Home() {
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <ScrollReveal>
               <div className="flex flex-col md:flex-row gap-12 items-center">
-                <div className="md:w-1/2 relative">
-                  <div className="absolute inset-0 border-2 border-primary/20 rounded-xl translate-x-4 translate-y-4"></div>
+                <div className="md:w-1/2 relative pr-4 pb-4">
+                  <div className="hidden sm:block absolute inset-0 border-2 border-primary/20 rounded-xl translate-x-4 translate-y-4"></div>
                   <div className="relative z-10 rounded-xl overflow-hidden shadow-lg border border-primary/10">
                     <Image
                       src="./images/profile.png"
@@ -477,16 +457,7 @@ export default function Home() {
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground">Email</p>
-                        <p className="font-medium">ghazanfar.idrees@gmail.com</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="rounded-full bg-gradient-to-r from-primary to-secondary p-2">
-                        <Phone className="h-5 w-5 text-white" />
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">Phone</p>
-                        <p className="font-medium">03336699003</p>
+                        <a href="mailto:ghazanfar.idrees@gmail.com" className="font-medium hover:text-primary transition-colors">ghazanfar.idrees@gmail.com</a>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -654,25 +625,6 @@ export default function Home() {
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
               <span className="sr-only">Email</span>
-            </Link>
-            <Link
-              href="tel:03336699003"
-              className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-              <span className="sr-only">Phone</span>
             </Link>
           </div>
         </div>

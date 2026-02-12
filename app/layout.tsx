@@ -5,7 +5,11 @@ export const metadata = {
   title: "Ghazanfar Idrees | Product-Led Growth Strategist",
   description:
     "Helping companies build products that retain & grow users. 12+ years of experience in product management, growth hacking, and SEO.",
-    generator: 'v0.dev'
+  generator: 'v0.dev',
+  icons: {
+    icon: '/images/favicon.png',
+    apple: '/images/favicon.png',
+  },
 }
 
 export default function RootLayout({
