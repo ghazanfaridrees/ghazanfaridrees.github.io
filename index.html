@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghazanfar Idrees — Co-Founder & COO, Shifa Therapy + CounselClinic</title>
+<meta name="description" content="Building mental health infrastructure for the Muslim world. Co-Founder & COO of Shifa Therapy and CounselClinic — 165+ therapists across 20+ countries.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS
+   ═══════════════════════════════════════════ */
+:root {
+  --navy: #1A1A2E;
+  --navy-light: #222240;
+  --navy-mid: #2A2A4A;
+  --teal: #0F9D9A;
+  --teal-glow: #0F9D9A33;
+  --teal-dim: #0F9D9A18;
+  --white: #F0F0F5;
+  --white-dim: #A0A0B8;
+  --white-muted: #6C6C88;
+  --font: 'Satoshi', -apple-system, sans-serif;
+  --max-w: 720px;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --radius: 12px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ═══════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--teal); text-decoration: none; transition: opacity var(--transition); }
+a:hover { opacity: 0.8; }
+
+img { max-width: 100%; display: block; }
+
+/* ═══════════════════════════════════════════
+   NAV
+   ═══════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(26, 26, 46, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(15, 157, 154, 0.1);
+}
+
+.nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.nav-logo {
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: var(--white);
+  letter-spacing: -0.5px;
+  cursor: pointer;
+}
+
+.nav-logo span { color: var(--teal); }
+
+.nav-links {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--white-dim);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding: 6px 0;
+  position: relative;
+  transition: color var(--transition);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--teal);
+  transition: width var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--white);
+  opacity: 1;
+}
+
+.nav-links a.active::after,
+.nav-links a:hover::after { width: 100%; }
+
+/* Mobile hamburger */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  transition: var(--transition);
+}
+
+@media (max-width: 640px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 46, 0.97);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: var(--space-md) var(--space-lg);
+    gap: var(--space-sm);
+    transform: translateY(-120%);
+    transition: transform var(--transition);
+    border-bottom: 1px solid rgba(15, 157, 154, 0.1);
+  }
+  .nav-links.open { transform: translateY(0); }
+  .nav-links a { font-size: 1rem; padding: 8px 0; }
+}
+
+/* ═══════════════════════════════════════════
+   LAYOUT
+   ═══════════════════════════════════════════ */
+.page {
+  display: none;
+  min-height: 100vh;
+  padding-top: 60px;
+}
+
+.page.active { display: block; }
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md) var(--space-2xl);
+}
+
+@media (max-width: 640px) {
+  .container { padding: var(--space-lg) var(--space-sm) var(--space-xl); }
+}
+
+/* ═══════════════════════════════════════════
+   TYPOGRAPHY
+   ═══════════════════════════════════════════ */
+.headline-xl {
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.headline-lg {
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.headline-md {
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+.body-lg {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--white-dim);
+}
+
+.body-sm {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--white-muted);
+}
+
+.teal { color: var(--teal); }
+
+/* ═══════════════════════════════════════════
+   COMPONENTS
+   ═══════════════════════════════════════════ */
+
+/* Teal accent line */
+.accent-line {
+  width: 48px;
+  height: 3px;
+  background: var(--teal);
+  border-radius: 2px;
+  margin: var(--space-md) 0;
+}
+
+/* Signal cards */
+.signal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin: var(--space-lg) 0;
+}
+
+@media (max-width: 500px) {
+  .signal-grid { grid-template-columns: 1fr; gap: 10px; }
+}
+
+.signal-card {
+  background: var(--navy-light);
+  border: 1px solid rgba(15, 157, 154, 0.12);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  text-align: center;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.signal-card:hover {
+  border-color: rgba(15, 157, 154, 0.35);
+  transform: translateY(-2px);
+}
+
+.signal-icon {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.signal-number {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--white);
+}
+
+.signal-label {
+  font-size: 0.78rem;
+  color: var(--white-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* CTA buttons */
+.cta-group {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  border: none;
+  letter-spacing: -0.3px;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: var(--navy);
+}
+
+.btn-primary:hover {
+  background: #0db8b5;
+  color: var(--navy);
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(240, 240, 245, 0.2);
+}
+
+.btn-ghost:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  opacity: 1;
+}
+
+/* Platform cards */
+.platform-card {
+  background: var(--navy-light);
+  border: 1px solid rgba(15, 157, 154, 0.12);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+  transition: border-color var(--transition);
+}
+
+.platform-card:hover { border-color: rgba(15, 157, 154, 0.3); }
+
+.platform-card h3 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.platform-card .tagline {
+  color: var(--white-dim);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-md);
+}
+
+.platform-stats {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-md);
+}
+
+.platform-stat .num {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--teal);
+  display: block;
+}
+
+.platform-stat .lbl {
+  font-size: 0.75rem;
+  color: var(--white-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* Timeline */
+.timeline { margin: var(--space-lg) 0; }
+
+.timeline-item {
+  position: relative;
+  padding-left: 28px;
+  padding-bottom: var(--space-lg);
+  border-left: 2px solid var(--navy-mid);
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--teal);
+  border: 2px solid var(--navy);
+}
+
+.timeline-period {
+  font-size: 0.78rem;
+  color: var(--teal);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.timeline-role {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 4px 0 2px;
+}
+
+.timeline-company {
+  font-size: 0.9rem;
+  color: var(--white-dim);
+}
+
+.timeline-metric {
+  font-size: 0.85rem;
+  color: var(--white-muted);
+  margin-top: 4px;
+}
+
+/* Topic cards */
+.topic-grid {
+  display: grid;
+  gap: var(--space-sm);
+  margin: var(--space-md) 0;
+}
+
+.topic-card {
+  background: var(--navy-light);
+  border: 1px solid rgba(15, 157, 154, 0.1);
+  border-radius: var(--radius);
+  padding: var(--space-md) var(--space-md);
+  transition: border-color var(--transition);
+}
+
+.topic-card:hover { border-color: rgba(15, 157, 154, 0.3); }
+
+.topic-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.topic-card p {
+  font-size: 0.85rem;
+  color: var(--white-muted);
+  line-height: 1.5;
+}
+
+/* Connect page */
+.connect-primary {
+  background: var(--navy-light);
+  border: 2px solid var(--teal);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.connect-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid rgba(240, 240, 245, 0.06);
+  color: var(--white);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.connect-link:last-child { border-bottom: none; }
+.connect-link:hover { color: var(--teal); opacity: 1; padding-left: 6px; }
+
+.connect-link .link-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--teal-dim);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Conviction section */
+.conviction {
+  margin: var(--space-lg) 0;
+  padding-left: 16px;
+  border-left: 2px solid var(--teal);
+}
+
+.conviction p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: var(--space-sm);
+  color: var(--white-dim);
+  line-height: 1.5;
+}
+
+.conviction p:last-child { margin-bottom: 0; }
+
+/* Section spacing */
+.section { margin-bottom: var(--space-xl); }
+.section-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--white-muted);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+  font-size: 0.8rem;
+  color: var(--white-muted);
+  border-top: 1px solid rgba(240, 240, 245, 0.05);
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in:nth-child(2) { animation-delay: 0.08s; }
+.fade-in:nth-child(3) { animation-delay: 0.16s; }
+.fade-in:nth-child(4) { animation-delay: 0.24s; }
+.fade-in:nth-child(5) { animation-delay: 0.32s; }
+.fade-in:nth-child(6) { animation-delay: 0.40s; }
+
+/* Thesis paragraph */
+.thesis {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--white-dim);
+  margin: var(--space-lg) 0;
+  max-width: 600px;
+}
+
+/* Market paragraph */
+.market-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--white-dim);
+  margin: var(--space-md) 0;
+}
+
+/* Fundraise banner */
+.fundraise-banner {
+  background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+  border: 1px solid var(--teal);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+.fundraise-banner p {
+  font-size: 1.05rem;
+  color: var(--white-dim);
+  margin-bottom: var(--space-md);
+}
+
+/* About intro */
+.about-intro {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--white-dim);
+  margin-bottom: var(--space-xl);
+}
+
+.about-intro p { margin-bottom: var(--space-md); }
+
+/* Personal note */
+.personal-note {
+  background: var(--navy-light);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.personal-note p {
+  font-size: 0.92rem;
+  color: var(--white-dim);
+  line-height: 1.65;
+}
+
+/* Video featured embed */
+.video-featured {
+  margin-bottom: var(--space-xl);
+}
+
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 16 / 9;
+  background: var(--navy-light);
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition), filter var(--transition);
+}
+
+.video-thumbnail:hover img {
+  transform: scale(1.02);
+  filter: brightness(0.75);
+}
+
+.video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  background: rgba(15, 157, 154, 0.92);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition), background var(--transition);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.video-thumbnail:hover .video-play-btn {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: rgba(15, 157, 154, 1);
+}
+
+.video-play-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--navy);
+  margin-left: 3px;
+}
+
+.video-meta {
+  margin-top: var(--space-md);
+}
+
+.video-meta h3 {
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.video-meta .video-source {
+  font-size: 0.88rem;
+  color: var(--teal);
+  font-weight: 500;
+}
+
+.video-meta .video-desc {
+  font-size: 0.92rem;
+  color: var(--white-muted);
+  margin-top: 8px;
+  line-height: 1.55;
+}
+
+/* Video iframe active state */
+.video-thumbnail iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Speaking appearances */
+.appearances li {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid rgba(240, 240, 245, 0.06);
+  color: var(--white-dim);
+  font-size: 0.95rem;
+  list-style: none;
+}
+
+.appearances li:last-child { border-bottom: none; }
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="navigate('')">G<span>.</span></div>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" onclick="navigate('about')">About</a></li>
+      <li><a href="#building" onclick="navigate('building')">Building</a></li>
+      <li><a href="#speaking" onclick="navigate('speaking')">Speaking</a></li>
+      <li><a href="#connect" onclick="navigate('connect')">Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════ HOME ═══════════ -->
+<div id="page-home" class="page active">
+  <div class="container">
+    <div class="fade-in" style="margin-bottom: var(--space-md);">
+      <div class="accent-line"></div>
+    </div>
+
+    <h1 class="headline-xl fade-in">
+      Ghazanfar<br>Idrees
+    </h1>
+
+    <p class="body-lg fade-in" style="margin-top: var(--space-md); max-width: 520px;">
+      Co-Founder &amp; COO, Shifa Therapy + CounselClinic.<br>
+      Building mental health infrastructure for the Muslim world.
+    </p>
+
+    <div class="signal-grid fade-in">
+      <div class="signal-card">
+        <span class="signal-icon">&#127760;</span>
+        <div class="signal-number">20+</div>
+        <div class="signal-label">Countries</div>
+      </div>
+      <div class="signal-card">
+        <span class="signal-icon">&#129309;</span>
+        <div class="signal-number">165+</div>
+        <div class="signal-label">Therapists</div>
+      </div>
+      <div class="signal-card">
+        <span class="signal-icon">&#128200;</span>
+        <div class="signal-number">1,213%</div>
+        <div class="signal-label">Organic Growth</div>
+      </div>
+    </div>
+
+    <p class="thesis fade-in">
+      1.8 billion Muslims globally have never had a scaled, culturally safe mental health platform. I co-founded two to fix that.
+    </p>
+
+    <div class="cta-group fade-in">
+      <a class="btn btn-primary" href="#building" onclick="navigate('building')">What I'm building &#8594;</a>
+      <a class="btn btn-ghost" href="#connect" onclick="navigate('connect')">Let's talk</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<div id="page-about" class="page">
+  <div class="container">
+    <div class="accent-line fade-in"></div>
+    <h1 class="headline-lg fade-in">About</h1>
+
+    <div class="about-intro fade-in">
+      <p>I didn't start with a thesis about Muslim mental health. I started with watching people I grew up with avoid therapy — not because they didn't need it, but because nothing felt safe, culturally understood, or affordable.</p>
+
+      <p>That observation became a question. The question became research. And the research showed a market: 1.8 billion Muslims globally, chronically underserved, with a trust gap no generic platform has closed.</p>
+
+      <p>So I stopped being an employee. I co-founded Shifa Therapy and CounselClinic — two online therapy platforms built from zero in 18 months. 165+ verified therapists. Clients across 20+ countries. Organic traffic up 1,213% without a paid acquisition budget.</p>
+
+      <p>I run everything — product, technology, sales, therapist operations, marketing, pricing, fundraising. Not because I have to. Because I believe the operator who understands every layer of the machine builds the most durable company.</p>
+    </div>
+
+    <div class="section fade-in">
+      <div class="section-label">Career Arc</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-period">2024 – Present</div>
+          <div class="timeline-role">Co-Founder & COO</div>
+          <div class="timeline-company">Shifa Therapy + CounselClinic</div>
+          <div class="timeline-metric">165+ therapists · 20+ countries · Seed round open</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2024 – 2025</div>
+          <div class="timeline-role">Director of Product Studio</div>
+          <div class="timeline-company">Devsinc</div>
+          <div class="timeline-metric">Led product studio for growth-oriented products</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2023 – 2024</div>
+          <div class="timeline-role">Head of Product</div>
+          <div class="timeline-company">PakWheels.com</div>
+          <div class="timeline-metric">Led PMs, designers, and SEO experts</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2022 – 2023</div>
+          <div class="timeline-role">Head of Product</div>
+          <div class="timeline-company">Fitcy Health</div>
+          <div class="timeline-metric">20% engagement increase · 15% conversion boost</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2019 – 2022</div>
+          <div class="timeline-role">PM → Head of Product</div>
+          <div class="timeline-company">oladoc.com — Pakistan's largest healthcare platform</div>
+          <div class="timeline-metric">10X organic growth · 50% conversion · 30% retention</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2013 – 2019</div>
+          <div class="timeline-role">Technical Product Manager</div>
+          <div class="timeline-company">CareMed Specialty Pharmacy</div>
+          <div class="timeline-metric">SaaS healthcare products · 80% data entry reduction</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2014 – 2015</div>
+          <div class="timeline-role">Program Officer</div>
+          <div class="timeline-company">Punjab IT Board</div>
+          <div class="timeline-metric">CPEC monitoring · Punjab Law Portal</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">2013 – 2014</div>
+          <div class="timeline-role">R&D Fellow</div>
+          <div class="timeline-company">LUMS — Technology for People Initiative</div>
+          <div class="timeline-metric">Crime mapping adopted by Punjab &amp; Dubai Police</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section fade-in">
+      <div class="section-label">What I Believe</div>
+      <div class="conviction">
+        <p>"Features don't fix retention."</p>
+        <p>"Emerging markets force you to build better."</p>
+        <p>"Trust is the product."</p>
+        <p>"The operator who understands every layer builds the most durable company."</p>
+      </div>
+    </div>
+
+    <div class="section fade-in">
+      <div class="section-label">Outside Work</div>
+      <div class="personal-note">
+        <p>Table tennis. Science and astronomy — genuinely curious about how things work at every scale. Currently building an educational iPad app for my son about space exploration. B.Eng Software Engineering, University of Bradford.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ BUILDING ═══════════ -->
+<div id="page-building" class="page">
+  <div class="container">
+    <div class="accent-line fade-in"></div>
+    <h1 class="headline-lg fade-in">What I'm building</h1>
+
+    <p class="body-lg fade-in" style="margin: var(--space-md) 0 var(--space-lg);">
+      One infrastructure. Two markets. One unfair advantage.
+    </p>
+
+    <p class="market-text fade-in">
+      Two platforms. Two markets. Shifa Therapy serves the global Muslim community. CounselClinic serves the broader MENA and international market. Both are online-only, built from zero in 18 months.
+    </p>
+
+    <div class="fade-in">
+      <div class="platform-card">
+        <h3>Shifa Therapy</h3>
+        <p class="tagline">The world's first scaled mental health platform for Muslims.</p>
+        <div class="platform-stats">
+          <div class="platform-stat">
+            <span class="num">20+</span>
+            <span class="lbl">Countries</span>
+          </div>
+          <div class="platform-stat">
+            <span class="num">165+</span>
+            <span class="lbl">Therapists</span>
+          </div>
+          <div class="platform-stat">
+            <span class="num">1,213%</span>
+            <span class="lbl">Organic Growth</span>
+          </div>
+        </div>
+        <a class="btn btn-ghost" href="https://shifatherapy.com" target="_blank" rel="noopener">shifatherapy.com &#8599;</a>
+      </div>
+    </div>
+
+    <div class="fade-in">
+      <div class="platform-card">
+        <h3>CounselClinic</h3>
+        <p class="tagline">Professional online therapy for MENA and beyond.</p>
+        <div class="platform-stats">
+          <div class="platform-stat">
+            <span class="num">800%</span>
+            <span class="lbl">Growth</span>
+          </div>
+          <div class="platform-stat">
+            <span class="num">100%</span>
+            <span class="lbl">Online</span>
+          </div>
+        </div>
+        <a class="btn btn-ghost" href="https://counselclinic.com" target="_blank" rel="noopener">counselclinic.com &#8599;</a>
+      </div>
+    </div>
+
+    <div class="section fade-in">
+      <div class="section-label">The Market</div>
+      <p class="market-text">
+        1.8 billion Muslims worldwide. Mental health remains deeply stigmatised across Muslim-majority countries and diaspora communities. Gen Z therapy adoption is accelerating. At just 1% penetration, the addressable market exceeds $9 billion. No one has built the scaled, trust-first platform this population needs. That's what we're doing.
+      </p>
+    </div>
+
+    <div class="fundraise-banner fade-in">
+      <p>We're raising a Seed round. If you invest in mission-driven HealthTech with real traction, let's talk.</p>
+      <a class="btn btn-primary" href="https://calendly.com/ghazanfaridrees/break-the-ice" target="_blank" rel="noopener">Book a conversation &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SPEAKING ═══════════ -->
+<div id="page-speaking" class="page">
+  <div class="container">
+    <div class="accent-line fade-in"></div>
+    <h1 class="headline-lg fade-in">Speaking</h1>
+
+    <div class="video-featured fade-in" style="margin-top: var(--space-lg);">
+      <div class="video-thumbnail" id="videoThumb" onclick="playVideo()">
+        <img src="https://img.youtube.com/vi/tBC7SyWprIY/maxresdefault.jpg" alt="How to Grow a Product? — Out of Sync Podcast featuring Ghazanfar Idrees" loading="lazy" onerror="this.src='https://img.youtube.com/vi/tBC7SyWprIY/hqdefault.jpg'">
+        <div class="video-play-btn">
+          <svg viewBox="0 0 24 24"><polygon points="8,5 20,12 8,19"/></svg>
+        </div>
+      </div>
+      <div class="video-meta">
+        <h3>How to Grow a Product?</h3>
+        <div class="video-source">Out of Sync Podcast</div>
+        <div class="video-desc">Deep dive on product growth strategy, retention architecture, and what it takes to build scalable products in emerging markets.</div>
+      </div>
+    </div>
+
+    <div class="section fade-in">
+      <div class="section-label">Speaker Bio</div>
+      <p class="body-lg" style="margin-bottom: var(--space-md);">
+        Ghazanfar Idrees is Co-Founder &amp; COO of Shifa Therapy and CounselClinic — two online therapy platforms serving Muslims and the broader MENA market with verified therapists across 20+ countries. He has spent over a decade scaling digital products across HealthTech, SaaS, FinTech, and AI.
+      </p>
+    </div>
+
+    <div class="section fade-in">
+      <div class="section-label">Topics I Speak About</div>
+      <div class="topic-grid">
+        <div class="topic-card">
+          <h4>Building for the world's most underserved mental health market</h4>
+          <p>1.8 billion Muslims, chronic stigma, and why the solution is a trust problem — not a technology problem.</p>
+        </div>
+        <div class="topic-card">
+          <h4>Why the best HealthTech is being built outside Silicon Valley</h4>
+          <p>Emerging markets force harder constraints, leaner teams, and more creative solutions. That's an advantage.</p>
+        </div>
+        <div class="topic-card">
+          <h4>From operator to founder: the leap nobody prepares you for</h4>
+          <p>What changes when you go from running someone else's machine to building your own — and what stays the same.</p>
+        </div>
+        <div class="topic-card">
+          <h4>AI as a thinking partner, not a writing tool</h4>
+          <p>How I use AI for sales analysis, competitive intelligence, and operational decisions — not email drafts.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section fade-in">
+      <div class="section-label">Other Appearances</div>
+      <ul class="appearances">
+        <li>
+          <strong>Thriving in the Age of AI</strong> — Namal University Alumni Talk Series
+          <br><span class="body-sm">Seminar on embracing AI, navigating careers, and building in a rapidly evolving world.</span>
+        </li>
+        <li>
+          GIS Crime Mapping Tool — Featured in <strong>Dawn</strong> and <strong>Express Tribune</strong> (LUMS / Punjab Police collaboration)
+        </li>
+      </ul>
+    </div>
+
+    <div class="cta-group fade-in">
+      <a class="btn btn-primary" href="https://calendly.com/ghazanfaridrees/break-the-ice" target="_blank" rel="noopener">Invite me to speak &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CONNECT ═══════════ -->
+<div id="page-connect" class="page">
+  <div class="container">
+    <div class="accent-line fade-in"></div>
+    <h1 class="headline-lg fade-in">Connect</h1>
+    <p class="body-lg fade-in" style="margin: var(--space-md) 0 var(--space-lg);">
+      Investors, founders, operators, collaborators — book a conversation or reach out directly.
+    </p>
+
+    <div class="connect-primary fade-in">
+      <p class="headline-md" style="margin-bottom: 8px;">Book 15 minutes</p>
+      <p class="body-sm" style="margin-bottom: var(--space-md);">The fastest way to connect. No pitch needed — just conversation.</p>
+      <a class="btn btn-primary" href="https://calendly.com/ghazanfaridrees/break-the-ice" target="_blank" rel="noopener">Open Calendly &#8594;</a>
+    </div>
+
+    <div class="fade-in">
+      <a class="connect-link" href="https://linkedin.com/in/ghazanfaridrees" target="_blank" rel="noopener">
+        <div class="link-icon">in</div>
+        <div>
+          <div style="font-weight: 700;">LinkedIn</div>
+          <div class="body-sm">linkedin.com/in/ghazanfaridrees</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  Ghazanfar Idrees · Co-Founder &amp; COO, Shifa Therapy + CounselClinic
+</div>
+
+<!-- ═══════════ ROUTING ═══════════ -->
+<script>
+  const pages = ['home', 'about', 'building', 'speaking', 'connect'];
+
+  function navigate(page) {
+    if (!page) page = 'home';
+    if (!pages.includes(page)) page = 'home';
+
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + page).classList.add('active');
+
+    // Update nav
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    const activeLink = document.querySelector('.nav-links a[href="#' + page + '"]');
+    if (activeLink) activeLink.classList.add('active');
+
+    // Close mobile menu
+    document.getElementById('navLinks').classList.remove('open');
+
+    // Update hash without scroll
+    history.pushState(null, '', page === 'home' ? '#' : '#' + page);
+
+    // Scroll to top
+    window.scrollTo(0, 0);
+
+    // Re-trigger fade animations
+    const container = document.querySelector('#page-' + page + ' .container');
+    if (container) {
+      container.querySelectorAll('.fade-in').forEach(el => {
+        el.style.animation = 'none';
+        el.offsetHeight; // force reflow
+        el.style.animation = '';
+      });
+    }
+
+    return false;
+  }
+
+  function playVideo() {
+    const thumb = document.getElementById('videoThumb');
+    thumb.innerHTML = '<iframe src="https://www.youtube.com/embed/tBC7SyWprIY?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+  }
+
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // Handle initial hash
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && pages.includes(hash)) {
+      navigate(hash);
+    }
+  });
+
+  // Handle back/forward
+  window.addEventListener('popstate', () => {
+    const hash = window.location.hash.replace('#', '');
+    navigate(hash || 'home');
+  });
+
+  // Close menu on outside click
+  document.addEventListener('click', (e) => {
+    const nav = document.querySelector('.nav');
+    const toggle = document.querySelector('.nav-toggle');
+    if (!nav.contains(e.target) || (!toggle.contains(e.target) && !e.target.closest('.nav-links'))) {
+      // Only close if clicking outside nav
+    }
+  });
+</script>
+
+</body>
+</html>
